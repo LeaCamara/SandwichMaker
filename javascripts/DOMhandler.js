@@ -12,13 +12,39 @@ var condiments = document.getElementById("condimentChoices");
   <select> elements & checkboxes broadcast a change event, so you listen for it
   and get the value of the topping from your augmented IIFE
 */
-breads.addEventListener("change", function(event) {
+// OPTION 1:
+// breads.addEventListener("change", function(event) {
 // Get the value chosen from the DOM
+//   var selectedBread = event.target.value;
+//   console.log("selectedBread should be -->", selectedBread);
+//   SandwichMaker.getBreadPrice(selectedBread);
+// });
+// OPTION 2:
+breads.addEventListener("change", function(event) {
   var selectedBread = event.target.value;
-  console.log("selectedBread should be -->", selectedBread);
-  SandwichMaker.getBreadPrice(selectedBread);
+  if (event.target.checked === true) {
+      SandwichMaker.getBreadPrice(selectedBread);    
+      console.log("hello from inside the TRUE part of the if statement")
+  } else if (event.target.checked === false) {
+      SandwichMaker.subtractBreadPrice(selectedBread);    
+      console.log("hello from inside the FALSE part of the if statement")
+      //SUBTRACT TOPPING
+  }
 });
-  // Determine the price of the topping chosen
+
+// GROUP CODE:
+      // bread.addEventListener("change", function(event) {
+      //     chosenToppings = event.target.id;
+      //   if (event.target.checked === true) {
+      //     chosenToppingPrice = sandwichMaker.getBreadCost(chosenToppings);
+      //     sandwichMaker.addTopping(chosenToppingPrice);
+      //   } else if (event.target.checked === false) {
+      //     chosenToppingPrice = sandwichMaker.getBreadCost(chosenToppings);
+      //      sandwichMaker.subtractTopping(chosenToppingPrice);
+
+      //   }
+      //     endPrice.innerHTML = sandwichMaker.finalPrice();
+      // });
 
 meats.addEventListener("change", function(event) {
   var selectedMeat = event.target.value;
