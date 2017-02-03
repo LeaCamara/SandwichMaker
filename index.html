@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>IIFEs | Sandwich Maker Exercise</title>
+</head>
+<body>
+	<h1>Practicing IIFEs</h1>
+
+	<form id="sandwichMakerForm">
+		<h2>Let's Make a Sandwich!</h2>
+		<p>Select Your Sandwich Options:</p>
+        <fieldset id="breadChoices">
+            <legend>Bread</legend>
+            <input type="checkbox" name="bread" value="white" />White ($1.00)
+            <input type="checkbox" name="bread" value="wheat" />Wheat ($1.10)
+            <input type="checkbox" name="bread" value="baguette" />Baguette ($1.20)
+            <input type="checkbox" name="bread" value="hoagie" />Hoagie ($1.30)
+            <input type="checkbox" name="bread" value="bagel" />Bagel ($1.40)
+            <input type="checkbox" name="bread" value="croissant" />Croissant ($1.50)
+			<input type="checkbox" name="bread" value="none" />No Bread ($0.00)
+        </fieldset>
+        <fieldset id="meatChoices">
+            <legend>Meat/Protein</legend>
+            <input type="checkbox" name="meat" value="turkey" />Turkey ($2.00)
+            <input type="checkbox" name="meat" value="roast-beef" />Roast Beef ($2.10)
+            <input type="checkbox" name="meat" value="ham" />Ham ($2.20)
+            <input type="checkbox" name="meat" value="mushroom" />Portabella Mushroom ($2.30)
+            <input type="checkbox" name="meat" value="tofu" />Tofu ($2.40)
+            <input type="checkbox" name="meat" value="none" />No Protein ($0.00)
+        </fieldset>
+        <fieldset id="cheeseChoices">
+            <legend>Cheese</legend>
+            <input type="checkbox" name="cheese" value="cheddar" />Cheddar ($0.80)
+            <input type="checkbox" name="cheese" value="swiss" />Swiss ($0.85)
+            <input type="checkbox" name="cheese" value="brie" />Brie ($0.90)
+            <input type="checkbox" name="cheese" value="gruyere" />Gruyere ($0.95)
+			<input type="checkbox" name="cheese" value="none" />No Cheese ($0.00)
+        </fieldset>
+        <fieldset id="veggieChoices">
+            <legend>Veggies</legend>
+            <input type="checkbox" name="veggies" value="lettuce" />Lettuce ($0.50)
+            <input type="checkbox" name="veggies" value="tomato" />Tomato ($0.50)
+            <input type="checkbox" name="veggies" value="pickle" />Pickle ($0.25)
+            <input type="checkbox" name="veggies" value="onion" />Onion ($0.50)
+            <input type="checkbox" name="veggies" value="avocado" />Avocado ($0.95)
+            <input type="checkbox" name="veggies" value="basil" />Basil ($0.75)
+            <input type="checkbox" name="veggies" value="none" />No Veg ($0.00)
+        </fieldset>
+        <fieldset id="condimentChoices">
+            <legend>Condiments</legend>
+            <input type="checkbox" name="condiments" value="mayonnaise" />Mayonnaise ($0.20)
+            <input type="checkbox" name="condiments" value="dijon" />Dijon Mustard ($0.10)
+            <input type="checkbox" name="condiments" value="honey" />Honey ($0.15)
+            <input type="checkbox" name="condiments" value="oil&vinegar" />Oil &amp; Vinegar ($0.50)
+            <input type="checkbox" name="condiments" value="hotSauce" />Hot Sauce ($0.25)
+            <input type="checkbox" name="condiments" value="none" />No Condiments ($0.00)
+        </fieldset><br>
+        <button type="button" id="makeSandwichButton">Make Sandwich!</button>
+    </form><br>
+    
+    <div>
+    	<hr>
+            <h4>Your Total Sandwich Price:</h4>
+    		<h4 id="sandwichPrice"></h4>
+    	<hr>
+    </div>
+
+	<script type="text/javascript" src="javascripts/SandwichMaker.js" ></script>
+	<script type="text/javascript" src="javascripts/bread.js" ></script>
+	<script type="text/javascript" src="javascripts/meat.js" ></script>
+	<script type="text/javascript" src="javascripts/cheese.js" ></script>
+	<script type="text/javascript" src="javascripts/condiments.js" ></script>
+	<script type="text/javascript" src="javascripts/veggies.js" ></script>
+	<script type="text/javascript" src="javascripts/DOMhandler.js" ></script>
+</body>
+</html>
