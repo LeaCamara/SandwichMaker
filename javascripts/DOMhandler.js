@@ -8,47 +8,36 @@ var cheeses = document.getElementById("cheeseChoices");
 var veggies = document.getElementById("veggieChoices");
 var condiments = document.getElementById("condimentChoices");
 
-/* 
-  <select> elements & checkboxes broadcast a change event, so you listen for it
-  and get the value of the topping from your augmented IIFE
-*/
-// OPTION 1:
+// OPTION 1 (doesn't decrease price of de-selected items):
 // breads.addEventListener("change", function(event) {
 // Get the value chosen from the DOM
 //   var selectedBread = event.target.value;
 //   console.log("selectedBread should be -->", selectedBread);
 //   SandwichMaker.getBreadPrice(selectedBread);
 // });
-// OPTION 2:
+
+// OPTION 2 (to increase AND decrease price via if statement:
 breads.addEventListener("change", function(event) {
   var selectedBread = event.target.value;
   if (event.target.checked === true) {
       SandwichMaker.getBreadPrice(selectedBread);    
-      console.log("hello from inside the TRUE part of the if statement")
+      console.log("hello from inside the TRUE part of the BREAD if statement")
   } else if (event.target.checked === false) {
       SandwichMaker.subtractBreadPrice(selectedBread);    
-      console.log("hello from inside the FALSE part of the if statement")
-      //SUBTRACT TOPPING
+      console.log("hello from inside the FALSE part of the BREAD if statement")
+      //SUBTRACT TOPPING PRICE
   }
 });
 
-// GROUP CODE:
-      // bread.addEventListener("change", function(event) {
-      //     chosenToppings = event.target.id;
-      //   if (event.target.checked === true) {
-      //     chosenToppingPrice = sandwichMaker.getBreadCost(chosenToppings);
-      //     sandwichMaker.addTopping(chosenToppingPrice);
-      //   } else if (event.target.checked === false) {
-      //     chosenToppingPrice = sandwichMaker.getBreadCost(chosenToppings);
-      //      sandwichMaker.subtractTopping(chosenToppingPrice);
-
-      //   }
-      //     endPrice.innerHTML = sandwichMaker.finalPrice();
-      // });
-
 meats.addEventListener("change", function(event) {
   var selectedMeat = event.target.value;
-  SandwichMaker.getMeatPrice(selectedMeat);
+  if (event.target.checked === true) {
+      SandwichMaker.getMeatPrice(selectedMeat);    
+      console.log("hello from inside the TRUE part of the MEAT if statement")
+  } else if (event.target.checked === false) {
+      SandwichMaker.subtractMeatPrice(selectedMeat);    
+      console.log("hello from inside the FALSE part of the MEAT if statement")
+  }
 });
 
 cheeses.addEventListener("change", function(event) {
