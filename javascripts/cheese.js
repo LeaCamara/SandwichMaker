@@ -18,9 +18,15 @@ var SandwichMaker = (function(maker) {
     console.log("from inside selectedCheese function - should be value of cheese you selected -->", selectedCheese);
     var finalCheesePrice = cheesePrices[selectedCheese];
     console.log("finalCheesePrice", finalCheesePrice);
-
     SandwichMaker.addToppingPrice(finalCheesePrice);    
-
+  };
+  maker.subtractCheesePrice = function(selectedCheese) {
+    console.log("console selectedCheese from inside maker.subtractCheesePrice?-->", selectedCheese);
+    //NOT SHOWING UP 
+    var unselectedCheesePrice = cheesePrices[selectedCheese]; 
+    // when you're attaching a dynamic variable that can take on different values, use []
+    // when you're attaching a static value, use .
+    SandwichMaker.subtractToppingPrice(unselectedCheesePrice);
   };
 
   // Return the new, augmented object with the new method on it
