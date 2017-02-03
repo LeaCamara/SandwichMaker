@@ -23,8 +23,12 @@ var SandwichMaker = (function(maker) {
 		console.log("finalVeggiePrice", finalVeggiePrice);
 
     	SandwichMaker.addToppingPrice(finalVeggiePrice);
-  	};
-
+  	}; 
+  	maker.subtractVeggiePrice = function(selectedVeggie) {
+    console.log("console selectedVeggie from inside maker.subtractVeggiePrice?-->", selectedVeggie);
+    var unselectedVeggiePrice = veggiePrices[selectedVeggie]; 
+    SandwichMaker.subtractToppingPrice(unselectedVeggiePrice);
+  };
   // Return the new, augmented object with the new method on it
   return maker;
 })(SandwichMaker || {});

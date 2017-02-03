@@ -24,10 +24,7 @@ var SandwichMaker = (function(maker) {
   };
   maker.subtractMeatPrice = function(selectedMeat) {
     console.log("console selectedMeat from inside maker.subtractMeatPrice?-->", selectedMeat);
-    //NOT SHOWING UP 
     var unselectedMeatPrice = meatPrices[selectedMeat]; 
-    // when you're attaching a dynamic variable that can take on different values, use []
-    // when you're attaching a static value, use .
     SandwichMaker.subtractToppingPrice(unselectedMeatPrice);
   };
   // Return the new, augmented object with the new method on it

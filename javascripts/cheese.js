@@ -22,10 +22,7 @@ var SandwichMaker = (function(maker) {
   };
   maker.subtractCheesePrice = function(selectedCheese) {
     console.log("console selectedCheese from inside maker.subtractCheesePrice?-->", selectedCheese);
-    //NOT SHOWING UP 
     var unselectedCheesePrice = cheesePrices[selectedCheese]; 
-    // when you're attaching a dynamic variable that can take on different values, use []
-    // when you're attaching a static value, use .
     SandwichMaker.subtractToppingPrice(unselectedCheesePrice);
   };
 

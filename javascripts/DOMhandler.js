@@ -53,7 +53,13 @@ cheeses.addEventListener("change", function(event) {
 
 veggies.addEventListener("change", function(event) {
   var selectedVeggie = event.target.value;
-  SandwichMaker.getVeggiePrice(selectedVeggie);
+  if (event.target.checked === true) {
+      SandwichMaker.getVeggiePrice(selectedVeggie);    
+      console.log("hello from inside the TRUE part of the Veggie if statement")
+  } else if (event.target.checked === false) {
+      SandwichMaker.subtractVeggiePrice(selectedVeggie);    
+      console.log("hello from inside the FALSE part of the Veggie if statement")
+  }
 });
 
 condiments.addEventListener("change", function(event) {

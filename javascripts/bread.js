@@ -26,7 +26,6 @@ var SandwichMaker = (function(maker) {
 	};
 	maker.subtractBreadPrice = function(selectedBread) {
 		console.log("what happens when I try to console selectedBread from inside maker.subtractBreadPrice?-->", selectedBread);
-		//NOT SHOWING UP 
 		var unselectedBreadPrice = breadPrices[selectedBread]; 
 		// when you're attaching a dynamic variable that can take on different values, use []
 		// when you're attaching a static value, use .
