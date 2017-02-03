@@ -24,6 +24,7 @@ var SandwichMaker = (function(maker) {
 		console.log("finalBreadPrice", finalBreadPrice);
     	SandwichMaker.addToppingPrice(finalBreadPrice);
 	};
+
 	maker.subtractBreadPrice = function(selectedBread) {
 		console.log("what happens when I try to console selectedBread from inside maker.subtractBreadPrice?-->", selectedBread);
 		var unselectedBreadPrice = breadPrices[selectedBread]; 
@@ -31,6 +32,8 @@ var SandwichMaker = (function(maker) {
 		// when you're attaching a static value, use .
 		SandwichMaker.subtractToppingPrice(unselectedBreadPrice);
 	};
+  
   // Return the new, augmented object with the new method on it
   	return maker;
+
 })(SandwichMaker || {});

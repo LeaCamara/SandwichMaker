@@ -63,8 +63,14 @@ veggies.addEventListener("change", function(event) {
 });
 
 condiments.addEventListener("change", function(event) {
-  var selectedCondiment = event.target.value;
-  SandwichMaker.getCondimentPrice(selectedCondiment);
+  var selectedCondiment = event.target.value;  
+  if (event.target.checked === true) {
+      SandwichMaker.getCondimentPrice(selectedCondiment);    
+      console.log("hello from inside the TRUE part of the Condiment if statement")
+  } else if (event.target.checked === false) {
+      SandwichMaker.subtractCondimentPrice(selectedCondiment);    
+      console.log("hello from inside the FALSE part of the Condiment if statement")
+  }
 });
 
 var button = document.getElementById("makeSandwichButton").addEventListener("click", outputSandwichPrice);

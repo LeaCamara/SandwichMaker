@@ -20,6 +20,7 @@ var SandwichMaker = (function(maker) {
     console.log("finalCheesePrice", finalCheesePrice);
     SandwichMaker.addToppingPrice(finalCheesePrice);    
   };
+
   maker.subtractCheesePrice = function(selectedCheese) {
     console.log("console selectedCheese from inside maker.subtractCheesePrice?-->", selectedCheese);
     var unselectedCheesePrice = cheesePrices[selectedCheese]; 
@@ -28,4 +29,5 @@ var SandwichMaker = (function(maker) {
 
   // Return the new, augmented object with the new method on it
   return maker;
+  
 })(SandwichMaker || {});
